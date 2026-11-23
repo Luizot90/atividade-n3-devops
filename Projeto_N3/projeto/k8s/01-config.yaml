@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: catalogo
+  namespace: n3-luisotavio
+data:
+  DB_HOST: mysql
+  DB_NAME: catalogo
+  DB_USER: catalogo
+  REDIS_HOST: redis
+  REDIS_PORT: '6379'
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: banco
+  namespace: n3-luisotavio
+type: Opaque
+stringData:
+  DB_PASSWORD: demo_catalogo
+  MYSQL_ROOT_PASSWORD: demo_admin
